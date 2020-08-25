@@ -1,0 +1,31 @@
+<h1>Favorite Movies</h1>
+
+<ul>
+    <li>{{ [0].title }}</li>
+    <li>{{ [1].title }}</li>
+    <li>{{ [2].title }}</li>
+</ul>
+
+<h2>{{ [0].title }}</h2>
+<p>{{ [0].plot }}</p>
+
+<h2>{{ [1].title }}</h2>
+<p>{{ [1].plot }}</p>
+
+<h2>{{ [2].title }}</h2>
+<p>{{ [2].plot }}</p>
+
+<h2>Searched movie</h2>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    const title = 'Shrek'
+    axios(`http://www.omdbapi.com/?apikey=trilogy&t=${title}`)
+        .then(res => {
+            console.log(res.data)
+        })
+        .catch(err => {console.log(err)})
+
+
+
+</script>
